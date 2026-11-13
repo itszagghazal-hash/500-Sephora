@@ -9,6 +9,9 @@
   <meta name="description" content="Claim Your $500 Sephora
 Discount Today!">
   <meta name="theme-color" content="#ffffff">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -33,8 +36,7 @@ Discount Today!">
 
     body {
       min-height: 100vh;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
       background:
         radial-gradient(ellipse at 50% 0%, #ffffff 0%, transparent 60%),
         var(--background);
@@ -112,8 +114,8 @@ Discount Today!">
 
     .subtitle {
       color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.65;
       margin: 0 auto 26px;
       max-width: 330px;
     }
@@ -263,9 +265,9 @@ Discount Today!">
 
     .section-heading h2 {
       color: #303030;
-      font-size: 12px;
-      font-weight: 850;
-      letter-spacing: 1.1px;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .9px;
       white-space: nowrap;
     }
 
@@ -327,32 +329,59 @@ Discount Today!">
     .faq-section h2 {
       margin-bottom: 18px;
       color: #303030;
-      font-size: 16px;
-      font-weight: 850;
-      letter-spacing: -.3px;
+      font-size: 18px;
+      font-weight: 800;
+      letter-spacing: -.4px;
       text-align: center;
     }
 
     .faq-item {
-      padding: 15px 0;
+      padding: 0;
       border-bottom: 1px solid var(--border);
     }
 
-    .faq-item:last-child {
-      border-bottom: 0;
+    .faq-item summary {
+      position: relative;
+      padding: 17px 32px 17px 0;
+      color: #202124;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.45;
+      cursor: pointer;
+      list-style: none;
     }
 
-    .faq-item h3 {
-      margin-bottom: 7px;
-      color: #303030;
-      font-size: 13px;
-      font-weight: 800;
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      content: "+";
+      position: absolute;
+      top: 50%;
+      right: 3px;
+      transform: translateY(-50%);
+      color: var(--sephora-black);
+      font-size: 21px;
+      font-weight: 500;
+      transition: transform .2s ease;
+    }
+
+    .faq-item[open] summary::after {
+      content: "−";
     }
 
     .faq-item p {
-      color: var(--text-muted);
-      font-size: 12px;
+      padding: 0 20px 17px 0;
+      color: #555b64;
+      font-size: 14px;
       line-height: 1.7;
+    }
+
+    .faq-item summary:focus-visible {
+      outline: 2px solid #777;
+      outline-offset: 3px;
+      border-radius: 4px;
     }
 
     /* Responsive */
@@ -521,20 +550,20 @@ Discount Today!">
       <section class="faq-section" aria-labelledby="faq-title">
         <h2 id="faq-title">Frequently Asked Questions</h2>
 
-        <div class="faq-item">
-          <h3>What are deals?</h3>
+        <details class="faq-item">
+          <summary>What are deals?</summary>
           <p>Simple tasks like app downloads, surveys, or trial subscriptions. Each deal is straightforward and designed to be completed quickly.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <h3>How many do I need?</h3>
+        <details class="faq-item">
+          <summary>How many do I need?</summary>
           <p>Complete 5+ deals to receive your reward. The more deals you complete, the faster you can receive your discount code.</p>
-        </div>
+        </details>
 
-        <div class="faq-item">
-          <h3>How long do they take?</h3>
+        <details class="faq-item">
+          <summary>How long do they take?</summary>
           <p>Typically 10-20 minutes per deal. Most users complete all required deals within a few hours, spread across a day or two.</p>
-        </div>
+        </details>
       </section>
 
     </section>
